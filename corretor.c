@@ -20,28 +20,29 @@
 //renomeie o arquivo do include abaixo para aluno-<MATRICULA>.c
 #include "aluno1.c"
 
-void quebrar_data (data, *dia, *mes, *ano);
-void converte_data (ChDia, &dia, ChMes, &mes, ChAno, &ano);
-int bissexto (ano);
-int teste_data (dia, mes, ano);
+//void quebrar_data (char date[], char *dia[], char *mes[], char *ano[]);
+//void converte_data (ChDia, &dia, ChMes, &mes, ChAno, &ano);
+//int bissexto (ano);
+//int teste_data (dia, mes, ano);
 
-void testQ1();
+//void testQ1();
 //void testQ2();
 //void testQ3();
 //void testQ4();
-//void testQ5();
+void testQ5();
 //void testQ6();
 
 int main(){
     
-    testQ1();
+    //testQ1();
     //testQ2();
     //testQ3();
     //testQ4();
-    //testQ5();
+    testQ5();
     //testQ6();
 }
 
+/*
 void testQ1(){
     char str[11];
     strcpy(str,"29/02/2015");
@@ -54,21 +55,22 @@ void testQ1(){
     printf("%d\n",q1(str) == 0);
 }
 
-void quebrar_data (data, *dia, *mes, *ano){
+
+void quebrar_data (char date[], char *dia[], char *mes[], char *ano[]){
     int i, j;
 
-    for (i = 0; data[i] != '/'; i++)
-        dia[i] = data[i];
-        if (data[i + 2] == '/')
+    for (i = 0; date[i] != '/'; i++)
+        dia[i] = date[i];
+        if (date[i + 2] == '/')
             dia[i + 2] = '\0';
 
-    for (i++; data[i] != '/'; i++)
-        mes[i] = data[i];
-        if (data[i + 2] == '/')
+    for (i++; date[i] != '/'; i++)
+        mes[i] = date[i];
+        if (date[i + 2] == '/')
             mes[i + 2] = '\0';
 
-    for (i++; data[i] != '\0'; i++)
-        dia[i] = data[i];
+    for (i++; date[i] != '\0'; i++)
+        dia[i] = date[i];
 }
 
 void converte_data (ChDia, &dia, ChMes, &mes, ChAno, &ano){
@@ -112,7 +114,7 @@ int teste_data (dia, mes, ano, bissexto){
 
     return valido;
 }
-
+*/
 
 /*
 void testQ2(){
@@ -167,7 +169,8 @@ void testQ2(){
     printf("%d\n",qtdAnos == 0);
     
 }
-
+*/
+/*
 void testQ3(){
     char str[250];
     strcpy(str,"Renato Lima Novais");
@@ -177,7 +180,8 @@ void testQ3(){
     printf("%d\n",q3(str, 'l', 0) == 1);
     printf("%d\n",q3(str, 'L', 0) == 1);
 }
-
+*/
+/*
 void testQ4(){
     char strTexto[250];
     char strBusca[50];
@@ -209,7 +213,7 @@ void testQ4(){
     printf("%d\n",posicoes[5]==54);
     
 }
-
+*/
 
 void testQ5(){
     printf("%d\n",q5(345) == 543);
@@ -218,6 +222,7 @@ void testQ5(){
     printf("%d\n",q5(5430) == 345);
 }
 
+/*
 void testQ6(){
     printf("%d\n",q6(34567368, 3) == 2);
     printf("%d\n",q6(34567368, 4576) == 0);
@@ -225,3 +230,4 @@ void testQ6(){
     printf("%d\n",q6(3539343, 39) == 1);
     
 }
+*/

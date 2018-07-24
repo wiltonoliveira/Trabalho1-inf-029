@@ -34,9 +34,13 @@
  */
 int q1(char *data){
     int datavalida = 1;
-    
-    
-    
+    /*
+    char Cdia[3], Cmes[3], Cano[11];
+    //int iDia, iMes, iAno;
+
+    void quebrar_data (data, &Cdia[], &Cmes[], &Cano[]);
+    //void converte_data ( CDia, &dia, ChMes, &mes, ChAno, &ano);
+    */
     
     if (datavalida)
         return 1;
@@ -83,6 +87,15 @@ int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtd
 int q3(char *texto, char c, int isCaseSensitive){
     int qtdOcorrencias = -1;
     
+    qtdOcorrencias++;
+    int i;
+
+    for (i = 0; texto[i] != '\0'; i++){
+    	if (texto[i] == c || texto[i] == (c - 32) || texto[i] == (c + 32)){
+    		qtdOcorrencias++;
+    	}
+    }
+
     return qtdOcorrencias;
     
 }
@@ -120,6 +133,37 @@ int q4(char *strTexto, char *strBusca, int posicoes[30]){
  */
 
 int q5(int num){
+
+	int N = 4;
+	int x = 1;
+	int i, j, cont = 0;
+	int vet[N];
+	int atual, invertido = 0;
+
+	for (i = 0; i < N; i++)
+		vet[i] = -1;
+
+	for (i = 0; i < N; i++){
+		vet[i] = (num % 10);
+		num = num / 10;
+		cont++;
+	}
+
+	for (j = 1; j < cont; j++){
+		if (cont == 1){
+			break;
+		}
+
+		x = (x * 10);
+	}
+
+	for (i = 0; i < N; i++){
+		x = (x / 10);
+		atual = (vet[i] * x);
+		invertido = invertido + atual;
+	}
+
+
 
     return num;
 }
