@@ -20,29 +20,26 @@
 //renomeie o arquivo do include abaixo para aluno-<MATRICULA>.c
 #include "aluno1.c"
 
-//void quebrar_data (char date[], char *dia[], char *mes[], char *ano[]);
-//void converte_data (ChDia, &dia, ChMes, &mes, ChAno, &ano);
-//int bissexto (ano);
-//int teste_data (dia, mes, ano);
 
-//void testQ1();
+
+void testQ1();
 //void testQ2();
 //void testQ3();
 //void testQ4();
-void testQ5();
+//void testQ5();
 //void testQ6();
 
 int main(){
     
-    //testQ1();
+    testQ1();
     //testQ2();
     //testQ3();
     //testQ4();
-    testQ5();
+    //testQ5();
     //testQ6();
 }
 
-/*
+
 void testQ1(){
     char str[11];
     strcpy(str,"29/02/2015");
@@ -54,67 +51,6 @@ void testQ1(){
     strcpy(str,"45/4/2014");
     printf("%d\n",q1(str) == 0);
 }
-
-
-void quebrar_data (char date[], char *dia[], char *mes[], char *ano[]){
-    int i, j;
-
-    for (i = 0; date[i] != '/'; i++)
-        dia[i] = date[i];
-        if (date[i + 2] == '/')
-            dia[i + 2] = '\0';
-
-    for (i++; date[i] != '/'; i++)
-        mes[i] = date[i];
-        if (date[i + 2] == '/')
-            mes[i + 2] = '\0';
-
-    for (i++; date[i] != '\0'; i++)
-        dia[i] = date[i];
-}
-
-void converte_data (ChDia, &dia, ChMes, &mes, ChAno, &ano){
-    dia = atoi (ChDia);
-    ano = atoi (ChMes);
-    ano = atoi (ChAno);
-}
-
-int bissexto (ano){
-    int resultado;
-
-    if ((ano % 4) == 0)
-        resultado = 1;
-    
-    else if ((ano % 100) == 0)
-        resultado = 0;
-
-    else if ((ano % 400) == 0)
-        resultado = 1;
-
-    return resultado;
-}
-
-int teste_data (dia, mes, ano, bissexto){
-    int valido = 1;
-    int ab;
-
-    ab = bissexto (ano);
-
-    if (dia > 31 || dia < 1)
-        valido = 0;
-
-    else if (mes > 12 || mes < 1)
-        valido = 0;
-
-    else if (ab == 0 && mes == 2 && dia > 28)
-        valido = 0;
-
-    else if (ab == 0 && mes == 2 && dia > 29)
-        valido = 0;
-
-    return valido;
-}
-*/
 
 /*
 void testQ2(){
@@ -214,14 +150,14 @@ void testQ4(){
     
 }
 */
-
+/*
 void testQ5(){
     printf("%d\n",q5(345) == 543);
     printf("%d\n",q5(78) == 87);
     printf("%d\n",q5(3) == 3);
     printf("%d\n",q5(5430) == 345);
 }
-
+*/
 /*
 void testQ6(){
     printf("%d\n",q6(34567368, 3) == 2);

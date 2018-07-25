@@ -34,13 +34,16 @@
  */
 int q1(char *data){
     int datavalida = 1;
-    /*
+    
     char Cdia[3], Cmes[3], Cano[11];
-    //int iDia, iMes, iAno;
+    int iDia, iMes, iAno;
+    int bissex;
 
-    void quebrar_data (data, &Cdia[], &Cmes[], &Cano[]);
-    //void converte_data ( CDia, &dia, ChMes, &mes, ChAno, &ano);
-    */
+    quebrar_data (data, &Cdia, &Cmes, &Cano);
+    converte_data (Cdia, &iDia, Cmes, &iMes, Cano, &iAno);
+    bissex = bissexto (iAno);
+    datavalida = teste_data (iDia, iMes, iAno, bissex);
+    
     
     if (datavalida)
         return 1;
@@ -48,6 +51,65 @@ int q1(char *data){
         return 0;
     
 }
+
+
+void quebrar_data (char date[], char *dia[], char *mes[], char *ano[]){
+    int i, j;
+
+    for (i = 0; date[i] != '/'; i++)
+       *dia[i] = date[i];
+        if (date[i + 2] == '/')
+            *dia[i + 2] = '\0';
+
+    for (i++; date[i] != '/'; i++)
+        *mes[i] = date[i];
+        if (date[i + 2] == '/')
+            *mes[i + 2] = '\0';
+
+    for (i++; date[i] != '\0'; i++)
+        *dia[i] = date[i];
+}
+
+void converte_data (char ChDia, int *dia, char ChMes, int *mes, char ChAno, int *ano){
+    *dia = atoi (ChDia);
+    *mes = atoi (ChMes);
+    *ano = atoi (ChAno);
+}
+
+int bissexto (ano){
+    int resultado;
+
+    if ((ano % 4) == 0)
+        resultado = 1;
+    
+    else if ((ano % 100) == 0)
+        resultado = 0;
+
+    else if ((ano % 400) == 0)
+        resultado = 1;
+
+    return resultado;
+}
+
+
+int teste_data (dia, mes, ano, bissexto){
+    int valido = 1;
+
+    if (dia > 31 || dia < 1)
+        valido = 0;
+
+    else if (mes > 12 || mes < 1)
+        valido = 0;
+
+    else if (bissexto == 0 && mes == 2 && dia > 28)
+        valido = 0;
+
+    else if (bissexto == 1 && mes == 2 && dia > 29)
+        valido = 0;
+
+    return valido;
+}
+
 
 /*
  Q2 = diferença entre duas datas
